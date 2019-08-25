@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define PI 3.14
+
+double circle_area(double radius){
+	double cemberinalani=PI*radius*radius;
+	return cemberinalani;
+}
+double calc_hipotenuse(int side1,int side2){
+	double hipotenus=sqrt(side1*side1+side2*side2);
+	return hipotenus;
+	
+}
+
+double calc_radius_of_largest_circle(int side1,int side2){
+	double kisa=side1;
+	if(side2<side1){
+		kisa=side2;
+	}
+	double enbuyukyaricap=kisa/2;
+	return enbuyukyaricap;
+}
+
+
+double calc_radius_of_smallest_circle(int side1,int side2){
+  double enkucukyaricap=sqrt((side1/2)*(side1/2)+(side2/2)*(side2/2));
+  return enkucukyaricap;
+	
+}
+
+double calc_area_of_smallest_circle(int side1,int side2){
+	double radius=(double)calc_radius_of_smallest_circle(side1,side2);
+	double enkucukcemberalani=PI*radius*radius;
+	return enkucukcemberalani;
+	
+	
+}
+
+double calc_area_of_largest_circle(int side1,int side2){
+	double radius=(double)calc_radius_of_largest_circle(side1,side2);
+	double enbuyukcemberinalani=PI*radius*radius;
+	return enbuyukcemberinalani;
+	
+	
+}
+
+double calc_area_of_smallest_square(int side1,int side2){
+double buyuk=side1;
+if(side2>side1){
+buyuk=side2;
+
+}
+double kucukkare=buyuk*buyuk;
+return kucukkare;
+
+	
+}
+
+
+
+
+int main(int argc, char *argv[]) {
+	
+
+printf("cemberi alany=%lf\n",circle_area(5));
+printf("hipotenüs=%lf\n",calc_hipotenuse(3,4));
+printf("en buyuk cemberin yarycapy=%lf\n",calc_radius_of_largest_circle(6,8));
+printf("en kucuk cemberin yarycapy=%lf\n",calc_radius_of_smallest_circle(6,8));
+printf("en kucuk cemberin alani=%lf\n",calc_area_of_smallest_circle(6,8));
+printf("en buyuk cemberin alani=%lf\n",calc_area_of_largest_circle(3,5));
+printf("en kucuk karenin alani=%lf\n",calc_area_of_smallest_square(6,8));
+
+
+return 	0;}
